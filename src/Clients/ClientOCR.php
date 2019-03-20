@@ -81,10 +81,18 @@ class ClientOCR extends Client
 
     public function savePid($timeProcess)
     {
-        $text = $this->server . ";" . $timeProcess;
-        $file = fopen($this->pid, 'w');
-        fwrite($file, $text);
-        fclose($file);
+        try
+        {
+            $text = $this->server . ";" . $timeProcess;
+            $file = fopen($this->pid, 'w');
+            fwrite($file, $text);
+            fclose($file);
+            return true;
+        }
+        catch(\Exception $e)
+        {
+            return false;
+        }
     }
 
     public function chooseServer()
