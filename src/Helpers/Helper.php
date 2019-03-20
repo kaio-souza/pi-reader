@@ -2,6 +2,8 @@
 
 namespace Kaleu62\PIReader\Helpers;
 
+use Kaleu62\PIReader\Constants\PossibleOCRInconsistencies;
+
 class Helper
 {
     /**
@@ -58,14 +60,8 @@ class Helper
 
     public static function checkNecessaryTests($text)
     {
-        $commomErrorCharacters = [
-            'ç' => ['q', 'g'],
-            'o' => ['0'],
-            'i' => ['1'],
-            't' => ['7'],
-            'a' => ['4']
-        ];
 
+        $commomErrorCharacters = PossibleOCRInconsistencies::get();
         $possibleTests = [];
 
         foreach($commomErrorCharacters as $key => $value){
