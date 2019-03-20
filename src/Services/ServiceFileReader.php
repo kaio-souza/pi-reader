@@ -8,6 +8,12 @@ class ServiceFileReader
 {
     private $text;
 
+    /**
+     * @param $parsedFile
+     * @param $requestedText
+     * @param bool $isImage
+     * @return bool
+     */
     public function existsText($parsedFile, $requestedText, $isImage = false)
     {
         $requestedText = strtolower($requestedText);
@@ -19,46 +25,32 @@ class ServiceFileReader
         };
 
         if($isImage){
-            if(strpos($requestedText, 'ç')){
-                $textAttempt = Helper::commomOcrErrorC($requestedText);
-                if($this->checkMatching($textAttempt)){
-                    return true;
-                };
-            }
 
-            if(strpos($requestedText, 'o')){
-                $textAttempt = Helper::commomOcrErrorO($requestedText);
-                if($this->checkMatching($textAttempt)){
-                    return true;
-                };
-            }
-            if(strpos($requestedText, 'i')){
-                $textAttempt = Helper::commomOcrErrorI($requestedText);
-                if($this->checkMatching($textAttempt)){
-                    return true;
-                };
-            }
-            if(strpos($requestedText, 't')){
-                $textAttempt = Helper::commomOcrErrorT($requestedText);
-                if($this->checkMatching($textAttempt)){
-                    return true;
-                };
-            }
+            $necessaryTests = Helper::checkNecessaryTests($requestedText);
 
-            if(strpos($requestedText, 'a')){
-                $textAttempt = Helper::commomOcrErrorA($requestedText);
-                if($this->checkMatching($textAttempt)){
-                    return true;
-                };
+            foreach ($necessaryTests as $letter => $possibleLetters){
+                foreach($possibleLetters as $possibleLetter){
+                    $textAttempt = Helper::commomOcrError($requestedText, $letter, $possibleLetter);
+                    if($this->checkMatching($textAttempt)){
+                        return true;
+                    };
+                }
             }
 
         }
+
         $sanitizedText = Helper::removeAccents($requestedText);
+
         if($this->checkMatching($sanitizedText)){
             return true;
         };
     }
 
+    /**
+     * @param $parsedFile
+     * @param $regex
+     * @return array
+     */
     public function regxText($parsedFile, $regex)
     {
         $this->prepareParsedTextWithoutSanitize($parsedFile);
@@ -66,6 +58,12 @@ class ServiceFileReader
         return Helper::extract($this->text, $regex);
     }
 
+    /**
+     * @param $parsedFile
+     * @param $requestedText
+     * @param bool $isImage
+     * @return int
+     */
     public function countText($parsedFile, $requestedText, $isImage = false)
     {
         $requestedText = strtolower($requestedText);
@@ -79,43 +77,21 @@ class ServiceFileReader
         };
 
         if($isImage){
-            if(strpos($requestedText, 'ç')){
-                $textAttempt = Helper::commomOcrErrorC($requestedText);
-                $testMatch = $this->countMatches($textAttempt);
-                if($testMatch > 0){
-                    return $testMatch;
-                };
+
+            $necessaryTests = Helper::checkNecessaryTests($requestedText);
+
+            foreach ($necessaryTests as $letter => $possibleLetters){
+                foreach($possibleLetters as $possibleLetter)
+                {
+                    $textAttempt = Helper::commomOcrError($requestedText, $letter, $possibleLetter);
+                    $testMatch = $this->countMatches($textAttempt);
+                    if ($testMatch > 0)
+                    {
+                        return $testMatch;
+                    };
+                }
             }
 
-            if(strpos($requestedText, 'o')){
-                $textAttempt = Helper::commomOcrErrorO($requestedText);
-                $testMatch = $this->countMatches($textAttempt);
-                if($testMatch > 0){
-                    return $testMatch;
-                };
-            }
-            if(strpos($requestedText, 'i')){
-                $textAttempt = Helper::commomOcrErrorI($requestedText);
-                $testMatch = $this->countMatches($textAttempt);
-                if($testMatch > 0){
-                    return $testMatch;
-                };
-            }
-            if(strpos($requestedText, 't')){
-                $textAttempt = Helper::commomOcrErrorT($requestedText);
-                $testMatch = $this->countMatches($textAttempt);
-                if($testMatch > 0){
-                    return $testMatch;
-                };
-            }
-
-            if(strpos($requestedText, 'a')){
-                $textAttempt = Helper::commomOcrErrorA($requestedText);
-                $testMatch = $this->countMatches($textAttempt);
-                if($testMatch > 0){
-                    return $testMatch;
-                };
-            }
         }
         $sanitizedText = Helper::removeAccents($requestedText);
         $sanitizedMatch = $this->countMatches($sanitizedText);
@@ -124,7 +100,9 @@ class ServiceFileReader
         };
     }
 
-
+    /**
+     * @param $parsedFile
+     */
     public function prepareParsedTextWithoutSanitize($parsedFile){
         foreach ($parsedFile as $item)
         {
@@ -132,6 +110,9 @@ class ServiceFileReader
         }
     }
 
+    /**
+     * @param $parsedFile
+     */
     public function prepareParsedText($parsedFile){
         foreach ($parsedFile as $item)
         {
@@ -139,17 +120,28 @@ class ServiceFileReader
         }
     }
 
+    /**
+     * @param $text
+     * @return bool
+     */
     public function checkMatching($text){
+
         if (strpos($this->text, Helper::onlyAlphaNumeric($text)) !== false) {
             return true;
         }
     }
 
+    /**
+     * @param $text
+     * @return int
+     */
     public function countMatches($text){
         $matches = substr_count($this->text, Helper::onlyAlphaNumeric($text));
         if ($matches > 0) {
             return $matches;
         }
     }
+
+
 
 }

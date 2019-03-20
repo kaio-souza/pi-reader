@@ -36,6 +36,11 @@ class PIReader
     private $types;
 
 
+    /**
+     * PIReader constructor.
+     * @param array $config
+     * @throws \Exception
+     */
     function __construct(array $config)
     {
         $this->serviceFileReader = new ServiceFileReader;
@@ -126,6 +131,11 @@ class PIReader
         return $this->serviceFileReader->countText($file, $requestedText, $this->isImage);
     }
 
+    /**
+     * @param $archivePath
+     * @param $regex
+     * @return array
+     */
     public function regexFind($archivePath, $regex)
     {
         $file = $this->getArchive($archivePath);

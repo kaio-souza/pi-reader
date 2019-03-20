@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2899211f-cffb-40bc-aa06-aacce0330cbf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/ClientOCR.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Constants/TypeConstant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Helpers/Helper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PIReader.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/ServiceFileReader.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/ServiceParseIMG.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/ServiceParsePDF.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pdfreader.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pdfreader.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clients/ClientOCR.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clients/ClientOCR.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constants/TypeConstant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constants/TypeConstant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helpers/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/Helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PIReader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/PIReader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ServiceFileReader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ServiceFileReader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ServiceParsePDF.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ServiceParsePDF.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,16 +18,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/example.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-              <folding>
-                <element signature="e#38#80#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="357">
+              <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -36,17 +35,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PIReader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="128" column="29" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="29" />
+            <state relative-caret-position="85">
+              <caret line="116" column="32" selection-start-line="116" selection-start-column="20" selection-end-line="116" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Services/ServiceParsePDF.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Services/ServiceParseIMG.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6">
+              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Services/ServiceFileReader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="442">
+              <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -54,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Clients/ClientOCR.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+            <state relative-caret-position="119">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -63,8 +80,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Helpers/Helper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="43" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="43" />
+            <state relative-caret-position="354">
+              <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Constants/TypeConstant.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -80,6 +106,7 @@
       <find>strtolower</find>
       <find>readF</find>
       <find>type</find>
+      <find>exit</find>
     </findStrings>
     <replaceStrings>
       <replace>PIReader</replace>
@@ -95,35 +122,37 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/LICENSE" />
-        <option value="$PROJECT_DIR$/src/Clients/ClientOCR.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/Services/ServicePDFHTML.php" />
         <option value="$PROJECT_DIR$/src/Services/ServicePDFIMG.php" />
-        <option value="$PROJECT_DIR$/src/Constants/TypeConstant.php" />
         <option value="$PROJECT_DIR$/src/PdfReader.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/examples/last.pid" />
         <option value="$PROJECT_DIR$/src/Services/ServiceParseIMG.php" />
         <option value="$PROJECT_DIR$/src/Services/ServiceArchiveReader.php" />
-        <option value="$PROJECT_DIR$/src/Services/ServiceParsePDF.php" />
-        <option value="$PROJECT_DIR$/src/Helpers/Helper.php" />
-        <option value="$PROJECT_DIR$/src/Services/ServiceFileReader.php" />
-        <option value="$PROJECT_DIR$/src/PIReader.php" />
         <option value="$PROJECT_DIR$/examples/find.php" />
+        <option value="$PROJECT_DIR$/src/Constants/TypeConstant.php" />
+        <option value="$PROJECT_DIR$/src/Clients/ClientOCR.php" />
+        <option value="$PROJECT_DIR$/src/PIReader.php" />
         <option value="$PROJECT_DIR$/examples/example.php" />
+        <option value="$PROJECT_DIR$/src/Helpers/Helper.php" />
+        <option value="$PROJECT_DIR$/src/Services/ServiceParsePDF.php" />
+        <option value="$PROJECT_DIR$/src/Services/ServiceFileReader.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/pdfreader.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-      </list>
-    </option>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/tecnickcom/tcpdf" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/smalot/pdfparser" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+    </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1125" />
@@ -178,6 +207,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Services" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="pdfreader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pdfreader" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pdfreader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -186,6 +224,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -216,17 +255,18 @@
       <option name="presentableId" value="Default" />
       <updated>1553003201563</updated>
       <workItem from="1553003202792" duration="4052000" />
+      <workItem from="1553078839324" duration="2913000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18167000" />
+    <option name="totallyTimeSpent" value="23112000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1149" y="0" width="1158" height="867" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954955" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25405404" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -294,68 +334,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/last.pid">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Services/ServiceParseIMG.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="37" column="37" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Services/ServiceParsePDF.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding>
-            <element signature="e#46#83#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constants/TypeConstant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helpers/Helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="43" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Clients/ClientOCR.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Services/ServiceFileReader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/last.pid" />
     <entry file="file://$PROJECT_DIR$/src/PIReader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="128" column="29" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="29" />
+        <state relative-caret-position="85">
+          <caret line="116" column="32" selection-start-line="116" selection-start-column="20" selection-end-line="116" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/example.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding>
-            <element signature="e#38#80#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="357">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helpers/Helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constants/TypeConstant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Clients/ClientOCR.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/ServiceParseIMG.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/ServiceParsePDF.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/ServiceFileReader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
         </state>
       </provider>
     </entry>
