@@ -1,2 +1,4 @@
 vendor
 examples
+composer.lock
+.idea/
