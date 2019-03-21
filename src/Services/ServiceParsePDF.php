@@ -44,11 +44,6 @@ class ServiceParsePDF extends Parser
         {
             $this->matchesPerPage[] = $page->gettext();
 
-            //            $match = false;
-            //            $string = $this->prepairString($page->gettext());
-            //            if ($string) $match = $this->getNumberLine($string);
-            //
-            //            if ($match) $this->matchesPerPage[] = $match;
         }
 
         return $this->matchesPerPage;

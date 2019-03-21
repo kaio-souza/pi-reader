@@ -58,7 +58,7 @@ class ClientOCR extends Client
     }
 
     /**
-     *
+     * @return array|mixed
      */
     public function readImg()
     {
@@ -79,6 +79,9 @@ class ClientOCR extends Client
         }
     }
 
+    /**
+     * @param $timeProcess
+     */
     public function savePid($timeProcess)
     {
         try
@@ -95,6 +98,9 @@ class ClientOCR extends Client
         }
     }
 
+    /**
+     * @return int
+     */
     public function chooseServer()
     {
         if (file_exists($this->pid))
@@ -107,7 +113,7 @@ class ClientOCR extends Client
             $serverNumber = 1;
             $serverTime = self::MAX_TIME_SERVER - 1;
         }
-        //SE TEMPO DE RESPOSTA DO ÚLTIMO SERVIDOR FOR MAIOR QUE 15 segundos, pula para próximo servidor
+        // IF RESPONSE TIME FROM LASTR REQUEST IS GREATHER THAN 15 SECONDS, SKIP TO NEXT SERVER
         if ($serverTime > self::MAX_TIME_SERVER)
         {
             $serverNumber++;
