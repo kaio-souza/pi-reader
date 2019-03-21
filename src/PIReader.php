@@ -2,38 +2,30 @@
 
 namespace Kaleu62\PIReader;
 
-use Kaleu62\PIReader\Constants\TypeConstant;
-use Kaleu62\PIReader\Services\ServiceFileReader;
-use Kaleu62\PIReader\Services\ServiceParsePDF;
-use Kaleu62\PIReader\Services\ServiceParseIMG;
+use Kaleu62\PIReader\Constants\TypeConstants;
+use Kaleu62\PIReader\Helpers\ConfigHelper;
+use Kaleu62\PIReader\Responses\FileResponse;
+use Kaleu62\PIReader\Services\FileReaderService;
+use Kaleu62\PIReader\Services\MatchingSearchService;
 
 class PIReader
 {
-    /**
-     * @var ServiceParsePDF
-     */
-    private $serviceParsePDF;
-
-    /**
-     * @var ServiceParseIMG
-     */
-    private $serviceParseIMG;
 
     /*
-     *   @var ServiceFileReader
+     *   @var MatchingSearchService
      */
-    private $serviceFileReader;
+    private $matchingSearchService;
+
+    /*
+     *   @var MatchingSearchService
+     */
+    private $fileReaderService;
 
     /**
-     * @var array
+     *   @var bool
      */
-    private $config;
-
     private $isImage;
-    /**
-     * @var array
-     */
-    private $types;
+
 
 
     /**
@@ -41,41 +33,14 @@ class PIReader
      * @param array $config
      * @throws \Exception
      */
-    function __construct(array $config)
+    function __construct(array $input)
     {
-        $this->serviceFileReader = new ServiceFileReader;
-        $this->serviceParsePDF = new ServiceParsePDF;
-        $this->serviceParseIMG = new ServiceParseIMG;
-        $this->config = $config;
-        $this->types = [TypeConstant::PDF, TypeConstant::IMG];
+        // Verify and Set configs
+        $config = ConfigHelper::verify($input);
 
-        if (!isset($config['apiKey']) && $config['type'] != TypeConstant::PDF) throw new \Exception("Para extrair dados de imagem, é necessario assinar o OCR: https://ocr.space/ ");
-
-        if (!isset($config['production'])) $this->config['production'] = false;
-        if (!isset($config['type'])) $this->config['type'] = 'All';
-    }
-
-    /**
-     * @param $archivePath
-     * @return array
-     * @throws \Exception
-     */
-    private function requestPDFHTML($archivePath)
-    {
-        $data = $this->serviceParsePDF->getFileText($archivePath);
-        if (count($data) > 0) return $data;
-    }
-
-    /**
-     * @param $archivePath
-     * @param $apiKey
-     * @param $env
-     * @return array
-     */
-    private function requestPDFIMG($archivePath, $apiKey, $env)
-    {
-        $data = $this->serviceParseIMG->getFileText($archivePath, $apiKey, $env);
-        if (count($data) > 0) return $data;
+        // Instantiate Services
+        $this->matchingSearchService = new MatchingSearchService;
+        $this->fileReaderService = new FileReaderService($config);
     }
 
     /**
@@ -84,29 +49,17 @@ class PIReader
      */
     public function getArchive($archivePath)
     {
-        $archieve = [];
-        switch ($this->config['type'])
-        {
-            case TypeConstant::PDF:
-                $this->isImage = false;
-                $archieve = $this->requestPDFHTML($archivePath);
-                break;
-            case TypeConstant::IMG:
-                $this->isImage = true;
-                $archieve = $this->requestPDFIMG($archivePath, $this->config['apiKey'], $this->config['production']);
-                break;
-            default:
-                $archieve = $this->requestPDFHTML($archivePath);
-                $this->isImage = false;
-                if (count($archieve) == 0)
-                {
-                    $this->isImage = true;
-                    $archieve = $this->requestPDFIMG($archivePath, $this->config['apiKey'], $this->config['production']);
-                }
-                break;
+        // Try Get File Parsed
+        $fileResponse = $this->fileReaderService->getText($archivePath);
 
+        if ($fileResponse instanceof FileResponse)
+        {
+            // Return Parsed File and set Type
+            $this->isImage = $fileResponse->type == TypeConstants::IMG;
+            return $fileResponse->content;
         }
-        return $archieve;
+
+        return null;
     }
 
     /**
@@ -116,8 +69,11 @@ class PIReader
      */
     public function existsInFile($archivePath, $requestedText)
     {
+        // Get File Content
         $file = $this->getArchive($archivePath);
-        return $this->serviceFileReader->existsText($file, $requestedText, $this->isImage);
+
+        // Check Correspondence
+        return $this->matchingSearchService->existsText($file, $requestedText, $this->isImage);
     }
 
     /**
@@ -127,8 +83,11 @@ class PIReader
      */
     public function countOccurrences($archivePath, $requestedText)
     {
+        // Get File Content
         $file = $this->getArchive($archivePath);
-        return $this->serviceFileReader->countText($file, $requestedText, $this->isImage);
+
+        // Check Count Correspondence
+        return $this->matchingSearchService->countText($file, $requestedText, $this->isImage);
     }
 
     /**
@@ -138,8 +97,11 @@ class PIReader
      */
     public function regexFind($archivePath, $regex)
     {
+        // Get File Content
         $file = $this->getArchive($archivePath);
-        return $this->serviceFileReader->regxText($file, $regex);
+
+        // Find match to regular expression
+        return $this->matchingSearchService->regxText($file, $regex);
     }
 
 }

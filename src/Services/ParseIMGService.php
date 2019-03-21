@@ -4,7 +4,7 @@ namespace Kaleu62\PIReader\Services;
 
 use Kaleu62\PIReader\Clients\ClientOCR;
 
-class ServiceParseIMG
+class ParseIMGService
 {
     /**
      * @var array

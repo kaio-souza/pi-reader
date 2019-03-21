@@ -6,7 +6,7 @@ use Kaleu62\PIReader\Helpers\Helper;
 use \Smalot\PdfParser\Parser;
 
 
-class ServiceParsePDF extends Parser
+class ParsePDFService extends Parser
 {
     /**
      * @var array

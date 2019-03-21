@@ -4,7 +4,7 @@ namespace Kaleu62\PIReader\Services;
 
 use Kaleu62\PIReader\Helpers\Helper;
 
-class ServiceFileReader
+class MatchingSearchService
 {
     private $text;
 
