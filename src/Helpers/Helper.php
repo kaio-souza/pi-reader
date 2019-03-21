@@ -12,14 +12,14 @@ class Helper
      */
     public static function onlyNumeric($text)
     {
-        return preg_replace("/[^0-9\.]/", "", $text);
+        return preg_replace("/[^0-9]/", "", $text);
     }
 
     /**
      * @param $text
      * @return string|string[]|null
      */
-    public static function onlyAlphaNumeric($text)
+    public static function onlyAlphaNumericAndDots($text)
     {
         return preg_replace("/[^a-zA-Z0-9\.]/", "", $text);
     }
@@ -28,9 +28,8 @@ class Helper
      * @param $text
      * @return mixed
      */
-    public function commomOcrError($text, $a, $b)
+    public static function replaceChar($text, $a, $b)
     {
-
         return str_replace($a, $b, $text);
     }
 

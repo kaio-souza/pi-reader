@@ -30,13 +30,12 @@ class ServiceFileReader
 
             foreach ($necessaryTests as $letter => $possibleLetters){
                 foreach($possibleLetters as $possibleLetter){
-                    $textAttempt = Helper::commomOcrError($requestedText, $letter, $possibleLetter);
+                    $textAttempt = Helper::replaceChar($requestedText, $letter, $possibleLetter);
                     if($this->checkMatching($textAttempt)){
                         return true;
                     };
                 }
             }
-
         }
 
         $sanitizedText = Helper::removeAccents($requestedText);
@@ -83,7 +82,7 @@ class ServiceFileReader
             foreach ($necessaryTests as $letter => $possibleLetters){
                 foreach($possibleLetters as $possibleLetter)
                 {
-                    $textAttempt = Helper::commomOcrError($requestedText, $letter, $possibleLetter);
+                    $textAttempt = Helper::replaceChar($requestedText, $letter, $possibleLetter);
                     $testMatch = $this->countMatches($textAttempt);
                     if ($testMatch > 0)
                     {
@@ -116,7 +115,7 @@ class ServiceFileReader
     public function prepareParsedText($parsedFile){
         foreach ($parsedFile as $item)
         {
-            $this->text .= strtolower(Helper::onlyAlphaNumeric($item));
+            $this->text .= strtolower(Helper::onlyAlphaNumericAndDots($item));
         }
     }
 
@@ -126,7 +125,7 @@ class ServiceFileReader
      */
     public function checkMatching($text){
 
-        if (strpos($this->text, Helper::onlyAlphaNumeric($text)) !== false) {
+        if (strpos($this->text, Helper::onlyAlphaNumericAndDots($text)) !== false) {
             return true;
         }
     }
@@ -136,7 +135,7 @@ class ServiceFileReader
      * @return int
      */
     public function countMatches($text){
-        $matches = substr_count($this->text, Helper::onlyAlphaNumeric($text));
+        $matches = substr_count($this->text, Helper::onlyAlphaNumericAndDots($text));
         if ($matches > 0) {
             return $matches;
         }
