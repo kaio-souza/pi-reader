@@ -1,4 +1,5 @@
 # PIReader (PDF's & Images Reader)
+[![Build Status](https://travis-ci.org/kaleu62/pi-reader.svg?branch=master)](https://travis-ci.org/kaleu62/pi-reader)
 It's a PDF and Image reader using Smalot\PdfParser and API from https://ocr.space/
 
 ### How To Use?
