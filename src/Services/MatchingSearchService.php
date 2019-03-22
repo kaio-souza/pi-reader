@@ -6,9 +6,9 @@ use Kaleu62\PIReader\Helpers\Helper;
 
 class MatchingSearchService
 {
-    private $text;
-
-
+    private $textToMatch;
+    private $originalRequestedText;
+    private $actualRequestedText;
 
     /**
      * @param $parsedFile
@@ -18,32 +18,53 @@ class MatchingSearchService
      */
     public function existsText($parsedFile, $requestedText, $isImage = false)
     {
-        $requestedText = strtolower($requestedText);
+        $this->prepareTextData($parsedFile, $requestedText);
 
-        $this->prepareParsedText($parsedFile);
-
-        if($this->checkMatching($requestedText))
+        if($this->checkMatching())
             return true;
-
 
         if($isImage){
-
-            $necessaryTests = Helper::checkNecessaryTests($requestedText);
-
-            foreach ($necessaryTests as $letter => $possibleLetters){
-                foreach($possibleLetters as $possibleLetter){
-                    $textAttempt = Helper::replaceChar($requestedText, $letter, $possibleLetter);
-                    if($this->checkMatching($textAttempt)){
-                        return true;
-                    };
-                }
-            }
+            $imageTest = $this->makeImageParsedTests('checkMatching');
+            if($imageTest)
+                return $imageTest;
         }
 
-        $sanitizedText = Helper::removeAccents($requestedText);
+        $sanitizedText = Helper::removeAccents($this->originalRequestedText);
+        $this->actualRequestedText = $sanitizedText;
 
-        if($this->checkMatching($sanitizedText))
+        if($this->checkMatching())
             return true;
+
+    }
+
+    /**
+     * @param $parsedFile
+     * @param $requestedText
+     * @param bool $isImage
+     * @return int
+     */
+    public function countText($parsedFile, $requestedText, $isImage = false)
+    {
+        $this->prepareTextData($parsedFile, $requestedText);
+
+        $originalMatches = $this->countMatches();
+
+        if($originalMatches)
+            return $originalMatches;
+
+        if($isImage){
+            $imageTest = $this->makeImageParsedTests('countMatches');
+            if($imageTest)
+                return $imageTest;
+        }
+
+        $sanitizedText = Helper::removeAccents($this->originalRequestedText);
+        $this->actualRequestedText = $sanitizedText;
+
+        $sanitizedMatch = $this->countMatches;
+
+        if($sanitizedMatch)
+            return $sanitizedMatch;
 
     }
 
@@ -55,94 +76,76 @@ class MatchingSearchService
     public function regxText($parsedFile, $regex)
     {
         $this->prepareParsedTextWithoutSanitize($parsedFile);
-
-        return Helper::extract($this->text, $regex);
+        return Helper::extract($this->textToMatch, $regex);
     }
 
     /**
-     * @param $parsedFile
-     * @param $requestedText
-     * @param bool $isImage
-     * @return int
-     */
-    public function countText($parsedFile, $requestedText, $isImage = false)
-    {
-        $requestedText = strtolower($requestedText);
-
-        $this->prepareParsedText($parsedFile);
-
-        $originalMatches = $this->countMatches($requestedText);
-
-        if($originalMatches > 0){
-            return $originalMatches;
-        };
-
-        if($isImage){
-
-            $necessaryTests = Helper::checkNecessaryTests($requestedText);
-
-            foreach ($necessaryTests as $letter => $possibleLetters){
-                foreach($possibleLetters as $possibleLetter)
-                {
-                    $textAttempt = Helper::replaceChar($requestedText, $letter, $possibleLetter);
-                    $testMatch = $this->countMatches($textAttempt);
-                    if ($testMatch > 0)
-                    {
-                        return $testMatch;
-                    };
-                }
-            }
-
-        }
-        $sanitizedText = Helper::removeAccents($requestedText);
-        $sanitizedMatch = $this->countMatches($sanitizedText);
-        if($sanitizedMatch > 0){
-            return $sanitizedMatch;
-        };
-    }
-
-    /**
-     * @param $parsedFile
-     */
-    public function prepareParsedTextWithoutSanitize($parsedFile){
-        foreach ($parsedFile as $item)
-        {
-            $this->text .= $item;
-        }
-    }
-
-    /**
-     * @param $parsedFile
-     */
-    public function prepareParsedText($parsedFile){
-        foreach ($parsedFile as $item)
-        {
-            $this->text .= strtolower(Helper::onlyAlphaNumericAndDots($item));
-        }
-    }
-
-    /**
-     * @param $text
+     * @param null $requestedText
      * @return bool
      */
-    public function checkMatching($text){
-
-        if (strpos($this->text, Helper::onlyAlphaNumericAndDots($text)) !== false) {
+    private function checkMatching(){
+        if (strpos($this->textToMatch, Helper::onlyAlphaNumericAndDots($this->actualRequestedText)) !== false) {
             return true;
         }
     }
 
     /**
-     * @param $text
+     * @param null $requestedText
      * @return int
      */
-    public function countMatches($text){
-        $matches = substr_count($this->text, Helper::onlyAlphaNumericAndDots($text));
+    private function countMatches(){
+
+        $matches = substr_count($this->textToMatch, Helper::onlyAlphaNumericAndDots($this->actualRequestedText));
         if ($matches > 0) {
             return $matches;
         }
     }
 
+    /**
+     * @param $parsedFile
+     * @param $requestedText
+     */
+    private function prepareTextData($parsedFile, $requestedText){
+        $this->originalRequestedText = strtolower($requestedText);
+        $this->actualRequestedText = $this->originalRequestedText;
+        $this->prepareParsedText($parsedFile);
+
+    }
+
+    /**
+     * @param $parsedFile
+     */
+    private function prepareParsedText($parsedFile){
+        foreach ($parsedFile as $item)
+        {
+            $this->textToMatch .= strtolower(Helper::onlyAlphaNumericAndDots($item));
+        }
+    }
+
+    /**
+     * @param $parsedFile
+     */
+    private function prepareParsedTextWithoutSanitize($parsedFile){
+        foreach ($parsedFile as $item)
+        {
+            $this->textToMatch .= $item;
+        }
+    }
 
 
+
+    private function makeImageParsedTests($callback){
+
+        $necessaryTests = Helper::checkNecessaryTests($this->originalRequestedText);
+
+        foreach ($necessaryTests as $letter => $possibleLetters){
+            foreach($possibleLetters as $possibleLetter)
+            {
+                $textAttempt = Helper::replaceChar($this->originalRequestedText, $letter, $possibleLetter);
+                $this->actualRequestedText = $textAttempt;
+
+                return $this->$callback();
+            }
+        }
+    }
 }
