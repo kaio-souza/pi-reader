@@ -2,6 +2,7 @@ language: php
 script: phpunit --verbose --coverage-text
 
 php:
+  - 7.1
   - 7.2
   - 7.3
 
