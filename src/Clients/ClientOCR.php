@@ -81,6 +81,7 @@ class ClientOCR extends Client
 
     /**
      * @param $timeProcess
+     * @return bool
      */
     public function savePid($timeProcess)
     {
@@ -113,19 +114,14 @@ class ClientOCR extends Client
             $serverNumber = 1;
             $serverTime = self::MAX_TIME_SERVER - 1;
         }
-        // IF RESPONSE TIME FROM LASTR REQUEST IS GREATHER THAN 15 SECONDS, SKIP TO NEXT SERVER
+
+        // IF RESPONSE TIME FROM LAST REQUEST IS GREATER THAN 15 SECONDS, SKIP TO NEXT SERVER
         if ($serverTime > self::MAX_TIME_SERVER)
         {
-            $serverNumber++;
-            if ($serverNumber > count($this->servers))
-            {
-                $serverNumber = 1;
-            }
+            $nextServerNumber = $serverNumber + 1;
+            $serverNumber = $serverNumber > count($this->servers) ? 1 : $nextServerNumber;
         }
-        else
-        {
-            $server = $serverNumber;
-        }
+
         return $serverNumber;
     }
 }

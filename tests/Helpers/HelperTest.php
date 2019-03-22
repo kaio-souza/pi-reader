@@ -31,9 +31,18 @@ class HelperTest extends TestCase
         $this->assertEquals($result, $test);
     }
 
+
+    public function test_extract(){
+        $string = "John Doe 12.12 1";
+        $regex = "[\d{2}\.\d{2} \d{1}]";
+        $result = '12.12 1';
+        $test = HelperPIReader::extract($string,$regex);
+        $this->assertEquals($result, $test[0]);
+    }
+
     public function test_remove_accents(){
-        $string = "àáâãäåæèéêëìíîïðñòóôõöøùúûüýßàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿāāăăąąććĉĉċċččďďđđēēĕĕėėęęěěĝĝğğġġģģĥĥħħĩĩīīĭĭįįi̇ıĳĳĵĵķķĺĺļļľľŀŀłłńńņņňňŉōōŏŏőőœœŕŕŗŗřřśśŝŝşşššţţťťŧŧũũūūŭŭůůűűųųŵŵŷŷÿźźżżžžſƒơơưưǎǎǐǐǒǒǔǔǖǖǘǘǚǚǜǜǻǻǽǽǿǿ";
-        $result = "aaaaaaaeeeeeiiiidnoooooouuuuysaaaaaaaeceeeeiiiinoooooouuuuyyaaaaaaccccccccddddeeeeeeeeeegggggggghhhhiiiiiiiiiiijijjjkkllllllllllnnnnnnnoooooooeoerrrrrrssssssssttttttuuuuuuuuuuuuwwyyyzzzzzzsfoouuaaiioouuuuuuuuuuaaaeaeoo";
+        $string = "àáâãäåæèéêëìíîïðñòóôõöøùúûüýßàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿāāăăććĉĉċċččďďđđēēĕĕėėęęěěĝĝğğġġģģĥĥħħĩĩīīĭĭįįi̇ıĳĳĵĵķķĺĺļļľľŀŀłłńńņņňňŉōōŏŏőőœœŕŕŗŗřřśśŝŝşşššţţťťŧŧũũūūŭŭůůűűųųŵŵŷŷÿźźżżžžſƒơơưưǎǎǐǐǒǒǔǔǖǖǘǘǚǚǜǜǻǻǽǽǿǿ";
+        $result = "aaaaaaaeeeeeiiiionoooooouuuuybaaaaaaaeceeeeiiiinoooooouuuuyyaaaaaaccccccccddddeeeeeeeeeegggggggghhhhiiiiiiiiiiijijjjkkllllllllllnnnnnnnoooooooeoerrrrrrssssssssttttttuuuuuuuuuuuuwwyyyzzzzzzffoouuaaiioouuuuuuuuuuaaaeaeoo";
 
         $test = HelperPIReader::removeAccents($string);
         $this->assertEquals($result , $test);

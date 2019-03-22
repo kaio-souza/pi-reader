@@ -2,10 +2,10 @@
 namespace Kaleu62\PIReader\Constants;
 
 /**
- * Class PossibleOCRInconsistencies
+ * Class PossibleOCRInconsistenciesConstants
  * @package Kaleu62\PIReader\Constants
  */
-class PossibleOCRInconsistencies{
+class PossibleOCRInconsistenciesConstants{
     const LETTER_C_CEDILLA = ['q', 'g'];
     const LETTER_O = ['0'];
     const LETTER_I = ['1'];

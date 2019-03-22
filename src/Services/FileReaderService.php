@@ -15,19 +15,23 @@ class FileReaderService{
     /**
      * @var ParsePDFService
      */
-    private $serviceParsePDF;
+    private $parsePDFService;
 
     /**
      * @var ParseIMGService
      */
-    private $serviceParseIMG;
+    private $parseIMGService;
 
+    /**
+     * @var MatchingSearchService
+     */
+    private $fileReaderService;
 
     function __construct(Config $config)
     {
-        $this->serviceFileReader = new MatchingSearchService;
-        $this->serviceParsePDF = new ParsePDFService;
-        $this->serviceParseIMG = new ParseIMGService;
+        $this->fileReaderService = new MatchingSearchService;
+        $this->parsePDFService = new ParsePDFService;
+        $this->parseIMGService = new ParseIMGService;
         $this->config = $config;
 
     }
@@ -39,7 +43,7 @@ class FileReaderService{
      */
     private function requestPDFHTML($archivePath)
     {
-        $data = $this->serviceParsePDF->getFileText($archivePath);
+        $data = $this->parsePDFService->getFileText($archivePath);
         if (count($data) > 0) return $data;
     }
 
@@ -51,13 +55,14 @@ class FileReaderService{
      */
     private function requestPDFIMG($archivePath)
     {
-        $data = $this->serviceParseIMG->getFileText($archivePath, $this->config->getApiKey(), $this->config->getIsProduction());
+        $data = $this->parseIMGService->getFileText($archivePath, $this->config->getApiKey(), $this->config->getIsProduction());
         if (count($data) > 0) return $data;
     }
 
     /**
      * @param $archivePath
-     * @return array
+     * @return FileResponse
+     * @throws \Exception
      */
     public function getText($archivePath)
     {
@@ -74,14 +79,13 @@ class FileReaderService{
                 break;
             default:
                 $file = $this->requestPDFHTML($archivePath);
+                $totalFiles = count($file);
 
-                if (count($file) == 0)
-                {
-                    $type = TypeConstants::IMG;
+                $type = $totalFiles == 0 ? TypeConstants::IMG : TypeConstants::PDF;
+
+                if ($totalFiles == 0)
                     $file = $this->requestPDFIMG($archivePath);
-                }else{
-                    $type = TypeConstants::PDF;
-                }
+
                 break;
         }
 

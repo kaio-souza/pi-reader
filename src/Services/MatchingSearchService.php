@@ -8,6 +8,8 @@ class MatchingSearchService
 {
     private $text;
 
+
+
     /**
      * @param $parsedFile
      * @param $requestedText
@@ -20,9 +22,9 @@ class MatchingSearchService
 
         $this->prepareParsedText($parsedFile);
 
-        if($this->checkMatching($requestedText)){
+        if($this->checkMatching($requestedText))
             return true;
-        };
+
 
         if($isImage){
 
@@ -40,9 +42,9 @@ class MatchingSearchService
 
         $sanitizedText = Helper::removeAccents($requestedText);
 
-        if($this->checkMatching($sanitizedText)){
+        if($this->checkMatching($sanitizedText))
             return true;
-        };
+
     }
 
     /**

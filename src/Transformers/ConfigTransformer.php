@@ -13,7 +13,10 @@ class ConfigTransformer{
         $config = new Config();
 
         $config->setType($array['type'] ?? 'All');
-        $config->setApiKey($array['apiKey'] ?? null);
+        
+        if(isset($array['apiKey']))
+            $config->setApiKey($array['apiKey']);
+            
         $config->setIsProduction($array['production'] ?? false);
 
         return $config;

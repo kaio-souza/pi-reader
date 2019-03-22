@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2899211f-cffb-40bc-aa06-aacce0330cbf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entities/Config.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exceptions/ApiKeyRequiredException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exceptions/InvalidConfigException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Helpers/ConfigHelper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Responses/FileResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/FileReaderService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Traits/ConstantsTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Transformers/ConfigTransformer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Constants/AccentsEquivalentsConstants.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Helpers/ConfigHelperTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Constants/PossibleOCRInconsistencies.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constants/PossibleOCRInconsistencies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Constants/TypeConstant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constants/TypeConstants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PIReader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/PIReader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ServiceFileReader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/MatchingSearchService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ServiceParseIMG.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ParseIMGService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ServiceParsePDF.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ParsePDFService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clients/ClientOCR.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clients/ClientOCR.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constants/PossibleOCRInconsistencies.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constants/PossibleOCRInconsistenciesConstants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helpers/ConfigHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/ConfigHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helpers/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/Helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/FileReaderService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/FileReaderService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/MatchingSearchService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/MatchingSearchService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Traits/ConstantsTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Traits/ConstantsTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transformers/ConfigTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transformers/ConfigTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Helpers/HelperTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Helpers/HelperTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,52 +28,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/example.php">
+        <entry file="file://$PROJECT_DIR$/src/Helpers/Helper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PIReader.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="42" column="49" lean-forward="true" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
+            <state relative-caret-position="132">
+              <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
               <folding>
-                <element signature="e#36#81#0#PHP" expanded="true" />
+                <element signature="e#44#103#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Services/FileReaderService.php">
+        <entry file="file://$PROJECT_DIR$/src/Services/MatchingSearchService.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Helpers/ConfigHelperTest.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
-              <caret line="89" column="23" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="23" />
+              <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
               <folding>
-                <element signature="e#44#89#0#PHP" expanded="true" />
+                <element signature="e#46#91#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Constants/PossibleOCRInconsistencies.php">
+        <entry file="file://$PROJECT_DIR$/src/Traits/ConstantsTrait.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+            <state relative-caret-position="270">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Helpers/HelperTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+              <folding>
+                <element signature="e#44#98#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Helpers/ConfigHelper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+            <state relative-caret-position="312">
+              <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
               <folding>
                 <element signature="e#44#89#0#PHP" expanded="true" />
               </folding>
@@ -93,37 +94,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Exceptions/ApiKeyRequiredException.php">
+        <entry file="file://$PROJECT_DIR$/src/Constants/TypeConstants.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="7" lean-forward="true" selection-end-line="18" />
+            <state relative-caret-position="150">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Exceptions/InvalidConfigException.php">
+        <entry file="file://$PROJECT_DIR$/src/Constants/AccentsEquivalentsConstants.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+            <state relative-caret-position="140">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Transformers/ConfigTransformer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entities/Config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.github/ISSUE_TEMPLATE/bug_report.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="90">
+                <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -146,6 +141,10 @@
       <find>types</find>
       <find>config</find>
       <find>setT</find>
+      <find>count</find>
+      <find>get</find>
+      <find>s</find>
+      <find>œ</find>
     </findStrings>
     <replaceStrings>
       <replace>PIReader</replace>
@@ -173,30 +172,32 @@
         <option value="$PROJECT_DIR$/examples/find.php" />
         <option value="$PROJECT_DIR$/phpunit.xml" />
         <option value="$PROJECT_DIR$/src/Helpers/Logger.php" />
-        <option value="$PROJECT_DIR$/src/Clients/ClientOCR.php" />
         <option value="$PROJECT_DIR$/tests/Clients/ClientOCRTest.php" />
-        <option value="$PROJECT_DIR$/tests/Helpers/HelperTest.php" />
-        <option value="$PROJECT_DIR$/src/Helpers/Helper.php" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/Services/ServiceFileReader.php" />
         <option value="$PROJECT_DIR$/src/Constants/TypeConstants.php" />
-        <option value="$PROJECT_DIR$/src/Services/MatchingSearchService.php" />
         <option value="$PROJECT_DIR$/src/Responses/FileResponse.php" />
         <option value="$PROJECT_DIR$/src/Helpers/Config.php" />
-        <option value="$PROJECT_DIR$/src/Traits/ConstantsTrait.php" />
         <option value="$PROJECT_DIR$/src/Entities/Config.php" />
         <option value="$PROJECT_DIR$/src/Constants/PossibleOCRInconsistencies.php" />
         <option value="$PROJECT_DIR$/src/Exceptions/InsuficientParamsOnConfigException.php" />
         <option value="$PROJECT_DIR$/src/Exceptions/ApiKeyRequiredException.php" />
         <option value="$PROJECT_DIR$/src/Exceptions/ConfigParamsException.php" />
-        <option value="$PROJECT_DIR$/src/Helpers/ConfigHelper.php" />
         <option value="$PROJECT_DIR$/src/Exceptions/InvalidConfigException.php" />
         <option value="$PROJECT_DIR$/src/PIReader.php" />
-        <option value="$PROJECT_DIR$/src/Services/FileReaderService.php" />
         <option value="$PROJECT_DIR$/src/Transformers/ConfigTransformer.php" />
         <option value="$PROJECT_DIR$/examples/example.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/Helpers/Helper.php" />
+        <option value="$PROJECT_DIR$/src/Clients/ClientOCR.php" />
+        <option value="$PROJECT_DIR$/src/Services/FileReaderService.php" />
+        <option value="$PROJECT_DIR$/src/Services/MatchingSearchService.php" />
+        <option value="$PROJECT_DIR$/src/Constants/AccentsEquivalentsConstants.php" />
+        <option value="$PROJECT_DIR$/tests/Helpers/HelperTest.php" />
+        <option value="$PROJECT_DIR$/src/Traits/ConstantsTrait.php" />
+        <option value="$PROJECT_DIR$/src/Helpers/ConfigHelper.php" />
+        <option value="$PROJECT_DIR$/tests/Helpers/ConfigHelperTest.php" />
       </list>
     </option>
   </component>
@@ -255,35 +256,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="pdfreader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pdfreader" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pdfreader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pdfreader" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pdfreader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pdfreader" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pdfreader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="pdfreader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -329,6 +301,62 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="pireader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pireader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pireader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pireader" type="462c0819:PsiDirectoryNode" />
+              <item name=".github" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pireader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pireader" type="462c0819:PsiDirectoryNode" />
+              <item name=".github" type="462c0819:PsiDirectoryNode" />
+              <item name="ISSUE_TEMPLATE" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pireader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pireader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pireader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pireader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Constants" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pireader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pireader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pireader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pireader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Traits" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pireader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pireader" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pireader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pireader" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="Helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,6 +365,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
+    <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../nucleo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -371,28 +400,29 @@
       <workItem from="1553003202792" duration="4052000" />
       <workItem from="1553037597910" duration="7753000" />
       <workItem from="1553128509817" duration="2167000" />
+      <workItem from="1553214627139" duration="8398000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37537000" />
+    <option name="totallyTimeSpent" value="45935000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1149" y="0" width="1158" height="867" extended-state="6" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988864" visible="true" weight="0.25855857" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988864" visible="true" weight="0.26294822" />
       <window_info id="Structure" order="1" sideWeight="0.5011136" side_tool="true" weight="0.25338647" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32928476" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32884902" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32928476" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32884902" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -404,6 +434,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/Helpers/HelperTest.php</url>
+          <line>29</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/composer.json">
@@ -470,34 +511,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/Clients/ClientOCRTest.php" />
-    <entry file="file://$PROJECT_DIR$/tests/Helpers/HelperTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="e#44#98#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Clients/ClientOCR.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Services/MatchingSearchService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -508,110 +525,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helpers/Helper.php">
+    <entry file="file://$PROJECT_DIR$/src/Exceptions/ConfigParamsException.php" />
+    <entry file="file://$PROJECT_DIR$/examples/example.php" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-564">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Traits/ConstantsTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constants/TypeConstants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constants/PossibleOCRInconsistencies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exceptions/ConfigParamsException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exceptions/ApiKeyRequiredException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="7" lean-forward="true" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exceptions/InvalidConfigException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+        <state relative-caret-position="15">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PIReader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="42" column="49" lean-forward="true" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
-          <folding>
-            <element signature="e#36#81#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="495">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Services/FileReaderService.php">
+    <entry file="file://$PROJECT_DIR$/src/Exceptions/ApiKeyRequiredException.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="89" column="23" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="23" />
-          <folding>
-            <element signature="e#44#89#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="12" column="7" selection-end-line="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helpers/ConfigHelper.php">
+    <entry file="file://$PROJECT_DIR$/src/Exceptions/InvalidConfigException.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding>
-            <element signature="e#44#89#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="195">
+          <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Transformers/ConfigTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="135">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/example.php">
+    <entry file="file://$PROJECT_DIR$/src/Entities/Config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        <state relative-caret-position="120">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/Constants/PossibleOCRInconsistenciesConstants.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        <state relative-caret-position="105">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Clients/ClientOCR.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="71" column="41" lean-forward="true" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/FileReaderService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="86" column="56" lean-forward="true" selection-start-line="86" selection-start-column="56" selection-end-line="86" selection-end-column="56" />
+          <folding>
+            <element signature="e#44#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="1124" column="20" selection-start-line="1124" selection-start-column="20" selection-end-line="1124" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/MatchingSearchService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helpers/Helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+          <folding>
+            <element signature="e#44#103#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Helpers/HelperTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+          <folding>
+            <element signature="e#44#98#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Traits/ConstantsTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helpers/ConfigHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding>
+            <element signature="e#44#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Helpers/ConfigHelperTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+          <folding>
+            <element signature="e#46#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constants/TypeConstants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constants/AccentsEquivalentsConstants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.github/ISSUE_TEMPLATE/bug_report.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="90">
+            <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
