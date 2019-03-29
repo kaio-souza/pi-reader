@@ -11,7 +11,7 @@ class ApiKeyRequiredException extends \Exception
      * @param int $code
      * @param Throwable|null $previous
      */
-    public function __construct($message = "To extract data from Images, is required the API Key from OCR SPACE (https://ocr.space/)", $code = 0, Throwable $previous = null)
+    public function __construct($message = "To extract data from Images, is required a valid API Key from OCR SPACE (https://ocr.space/)", $code = 0, Throwable $previous = null)
     {
         parent::__construct($message, $code, $previous);
     }

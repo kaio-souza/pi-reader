@@ -14,7 +14,7 @@ class ConfigTransformer{
 
         $config->setType($array['type'] ?? 'All');
         
-        if(isset($array['apiKey']))
+        if(isset($array['apiKey']) && strlen($array['apiKey']) > 10)
             $config->setApiKey($array['apiKey']);
             
         $config->setIsProduction($array['production'] ?? false);
