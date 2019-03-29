@@ -3,17 +3,12 @@
 namespace Kaleu62\PIReader\Services;
 
 use Kaleu62\PIReader\Helpers\Helper;
-use \Smalot\PdfParser\Parser;
+use Spatie\PdfToText\Pdf;
 
 
-class ParsePDFService extends Parser
+class ParsePDFService
 {
-    /**
-     * @var array
-     */
-    private $matchesPerPage = [];
-
-    /**
+        /**
      * @param $archivePath
      * @return array
      * @throws \Exception
@@ -22,16 +17,10 @@ class ParsePDFService extends Parser
     {
         try
         {
-            @$pdf = $this->parseFile($archivePath);
-        }
-        catch (\Exception $e)
-        {
-            return [];
-        }
-
-        try
-        {
-            $pages = $pdf->getPages();
+            $temp = tempnam(sys_get_temp_dir(), 'TMP_FILE_IN_');
+            $file = file_get_contents($archivePath);
+            file_put_contents($temp, $file);
+            $pages = [Pdf::getText($temp)];
         }
         catch (\Exception $e)
         {
@@ -40,13 +29,7 @@ class ParsePDFService extends Parser
 
         if (!is_array($pages)) return [];
 
-        foreach ($pages as $page)
-        {
-            $this->matchesPerPage[] = $page->gettext();
-
-        }
-
-        return $this->matchesPerPage;
+        return $pages;
     }
 
 

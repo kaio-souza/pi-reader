@@ -1,16 +1,30 @@
 {
     "name": "kaleu62/pi-reader",
+    "description": "A Simple PDF and Image parser",
+    "keywords": [
+        "pdf",
+        "parser",
+        "ocr",
+        "pi-reader"
+    ],
     "license": "MIT",
     "authors": [
         {
             "name": "Kaio Valdemar",
-            "email": "profkaio@outlook.com"
+            "email": "profkaio@outlook.com",
+            "role": "Developer"
         }
     ],
+    "support": {
+        "email": "profkaio@outlook.com"
+    },
     "require": {
         "php": ">=7.1",
         "guzzlehttp/guzzle": ">=6.3",
-        "smalot/pdfparser": ">=0.13.0"
+        "spatie/pdf-to-text": "^1.1"
+    },
+    "suggest": {
+        "spatie/pdf-to-text": "Needed to install the lib pdftotext, in Debian: 'apt-get install -y xpdf', or in CentOS: 'yum install poppler-utils'"
     },
     "autoload": {
         "psr-4": {

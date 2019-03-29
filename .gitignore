@@ -1,4 +1,6 @@
 vendor
+vendor/*
 examples
 composer.lock
-.idea/
+.idea
+.idea/*

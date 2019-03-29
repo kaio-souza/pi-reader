@@ -3,7 +3,7 @@
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage" /></a>
 
-It's a PDF and Image reader using Smalot\PdfParser and API from https://ocr.space/
+It's a PDF and Image reader using spatie/pdf-to-text and API from https://ocr.space/
 
 ### How To Use?
 

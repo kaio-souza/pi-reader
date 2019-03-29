@@ -85,7 +85,6 @@ class PIReader
     {
         // Get File Content
         $file = $this->getArchive($archivePath);
-        return $file;
         // Check Count Correspondence
         return $this->matchingSearchService->countText($file, $requestedText, $this->isImage);
     }
