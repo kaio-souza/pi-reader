@@ -20,7 +20,8 @@ class ParsePDFService
             $temp = tempnam(sys_get_temp_dir(), 'TMP_FILE_IN_');
             $file = file_get_contents($archivePath);
             file_put_contents($temp, $file);
-            $pages = [Pdf::getText($temp)];
+            $text = Pdf::getText($temp);
+            $pages = $text != '' ? [$text] : [];
         }
         catch (\Exception $e)
         {
