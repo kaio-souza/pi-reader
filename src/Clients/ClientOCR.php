@@ -2,43 +2,55 @@
 
 namespace Kaleu62\PIReader\Clients;
 
-use \GuzzleHttp\Client;
+use Exception;
+use GuzzleHttp\Client;
 
 
 class ClientOCR extends Client
 {
+
     /**
      * @var string
      * URL of free OCR server
      */
     const BASE_URI_FREE = 'https://api.ocr.space/parse/image';
+
     /**
      * @var int
      * Max time, in seconds, to wait for the server - if server take longer will use next server on next request
      */
     const MAX_TIME_SERVER = 30;
+
     /**
      * @var array
      * List of OCR servers. Key must be sequential
      */
-    private $servers = [1 => 'https://apipro1.ocr.space/parse/image', 2 => 'https://apipro2.ocr.space/parse/image', 3 => 'https://apipro3.ocr.space/parse/image'];
+    private $servers = [
+        1 => 'https://apipro1.ocr.space/parse/image',
+        2 => 'https://apipro2.ocr.space/parse/image',
+        3 => 'https://apipro3.ocr.space/parse/image'
+    ];
+
     /**
      * @var string
-     *
      */
     private $pid = "last.pid";
+
     /**
      * @var string
      */
     private $server;
+
     /**
      * @var string
      */
     private $archiveUrl;
+
     /**
      * @var string
      */
     private $apiKey;
+
     /**
      * @var string
      */
@@ -48,80 +60,66 @@ class ClientOCR extends Client
      * ClientOCR constructor.
      * @param $archiveUrl
      */
-    function __construct($archiveUrl, $apiKey, $env)
+    function __construct($archiveUrl, $apiKey, $env, $config = null)
     {
         parent::__construct();
+        if (isset($config['tempFolder']))
+            $this->pid = $config['tempFolder'] . '/' . $this->pid;
+
         $this->server = $this->chooseServer();
         $this->archiveUrl = $archiveUrl;
         $this->apiKey = $apiKey;
         $this->baseUri = $env == true ? $this->servers[$this->server] : self::BASE_URI_FREE;
     }
 
+    public function chooseServer()
+    {
+        $server = 1;
+        if (file_exists($this->pid)) {
+            $stats = file($this->pid);
+            list($serverNumber, $serverTime) = explode(";", $stats[0]);
+            $serverFromFile = $serverTime > self::MAX_TIME_SERVER ? $serverNumber : ($serverNumber + 1);
+            $server = $serverFromFile <= count($this->servers) ? $serverFromFile : 1;
+        }
+        return $server;
+    }
+
     /**
-     * @return array|mixed
+     * @return mixed
+     * @throws Exception
      */
     public function readImg()
     {
-        try
-        {
-            $after = time();
-            $request = $this->post($this->baseUri, ['headers' => ['Content-Type' => 'application/x-www-form-urlencoded', 'apikey' => $this->apiKey], 'form_params' => ['url' => $this->archiveUrl, 'scale' => 'True']]);
-            $before = time();
-            $body = json_decode($request->getBody());
-            $timeProcess = $before - $after;
-            $this->savePid($timeProcess);
-            if (isset($body->ErrorMessage)) throw new \Exception($body->ErrorMessage[0]);
-            return $body;
-        }
-        catch (\Exception $e)
-        {
-            return [];
-        }
+        $after = time();
+        $request = $this->post($this->baseUri, [
+            'headers' => [
+                'Content-Type' => 'application/x-www-form-urlencoded',
+                'apikey' => $this->apiKey
+            ],
+            'form_params' => [
+                'url' => $this->archiveUrl,
+                'language' => 'por',
+                'detectOrientation' => 'True',
+                'scale' => 'True',
+                'isOverlayRequired' => 'False',
+            ]
+        ]);
+        $body = json_decode($request->getBody());
+
+        if (isset($body->ErrorMessage))
+            throw new Exception($body->ErrorMessage[0]);
+
+        $before = time();
+        $timeProcess = $before - $after;
+        $this->savePid($timeProcess);
+        return $body;
     }
 
-    /**
-     * @param $timeProcess
-     * @return bool
-     */
     public function savePid($timeProcess)
     {
-        try
-        {
-            $text = $this->server . ";" . $timeProcess;
-            $file = fopen($this->pid, 'w');
-            fwrite($file, $text);
-            fclose($file);
-            return true;
-        }
-        catch(\Exception $e)
-        {
-            return false;
-        }
-    }
-
-    /**
-     * @return int
-     */
-    public function chooseServer()
-    {
-        if (file_exists($this->pid))
-        {
-            $stats = file('last.pid');
-            list($serverNumber, $serverTime) = explode(";", $stats[0]);
-        }
-        else
-        {
-            $serverNumber = 1;
-            $serverTime = self::MAX_TIME_SERVER - 1;
-        }
-
-        // IF RESPONSE TIME FROM LAST REQUEST IS GREATER THAN 15 SECONDS, SKIP TO NEXT SERVER
-        if ($serverTime > self::MAX_TIME_SERVER)
-        {
-            $nextServerNumber = $serverNumber + 1;
-            $serverNumber = $serverNumber > count($this->servers) ? 1 : $nextServerNumber;
-        }
-
-        return $serverNumber;
+        $text = $this->server . ";" . $timeProcess;
+        $file = @fopen($this->pid, 'w');
+        @fwrite($file, $text);
+        @fclose($file);
     }
 }
