@@ -73,7 +73,7 @@ class PIReader
         $file = $this->getArchive($archivePath);
 
         // Check Correspondence
-        return $this->matchingSearchService->existsText($file, $requestedText, $this->isImage);
+        return $file ? $this->matchingSearchService->existsText($file, $requestedText, $this->isImage) : null;
     }
 
     /**

@@ -33,7 +33,7 @@ The application currently consists of some really basic functions:
   
 ## existsInFile($filePath, $string)
 
-  This function returns a boolean with informing if the text is present in the file of the informed path
+  This function returns a boolean with informing if the text is present in the file of the informed path, if the file is opened correctly it returns boolean, otherwise it returns null
   
     $pireader->existsInFile("http://my_fake_pdf_path/file.pdf", "John Doe");
 
