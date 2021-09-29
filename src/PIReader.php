@@ -86,7 +86,7 @@ class PIReader
         // Get File Content
         $file = $this->getArchive($archivePath);
         // Check Count Correspondence
-        return $this->matchingSearchService->countText($file, $requestedText, $this->isImage);
+        return $file ? $this->matchingSearchService->countText($file, $requestedText, $this->isImage) : null;
     }
 
     /**
@@ -100,7 +100,7 @@ class PIReader
         $file = $this->getArchive($archivePath);
 
         // Find match to regular expression
-        return $this->matchingSearchService->regxText($file, $regex);
+        return  $file ? $this->matchingSearchService->regxText($file, $regex) : null;
     }
 
 }

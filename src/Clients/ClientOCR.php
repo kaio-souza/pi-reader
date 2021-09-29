@@ -62,7 +62,7 @@ class ClientOCR extends Client
      */
     function __construct($archiveUrl, $apiKey, $env, $config = null)
     {
-        parent::__construct();
+        parent::__construct([ 'verify' => false ]);
         if (isset($config['tempFolder']))
             $this->pid = $config['tempFolder'] . '/' . $this->pid;
 
