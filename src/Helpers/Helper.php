@@ -65,7 +65,7 @@ class Helper
         $possibleTests = [];
 
         foreach($commomErrorCharacters as $key => $value){
-            if(strpos($text, $key)){
+            if(stripos($text, $key)){
                 $possibleTests[$key] = $value;
             }
         }

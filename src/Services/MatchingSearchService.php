@@ -84,7 +84,7 @@ class MatchingSearchService
      * @return bool
      */
     private function checkMatching(){
-        if (strpos($this->textToMatch, Helper::onlyAlphaNumericAndDots($this->actualRequestedText)) !== false) {
+        if (stripos($this->textToMatch, Helper::onlyAlphaNumericAndDots($this->actualRequestedText)) !== false) {
             return true;
         }
     }
